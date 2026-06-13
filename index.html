@@ -3,391 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Kumar Avula | MLOps & DevOps Portfolio</title>
-    <!-- Tailwind CSS for sleek, modern UI styling -->
+    <title>Ajay Kumar Avula | MLOps & Systems Architect</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for clean development icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Devicon for technical language & tool badges -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght=400;500;700&family=Plus+Jakarta+Sans:wght=400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.4);
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
         }
+        
         .heading-font {
             font-family: 'Space Grotesk', sans-serif;
         }
+
+        .glow-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         .gradient-text {
-            background: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #10b981 100%);
+            background: linear-gradient(135deg, #a78bfa 0%, #6366f1 50%, #22d3ee 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .tech-badge {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(99, 102, 241, 0.2);
         }
-        .tech-badge:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-[#0b0f1a] text-slate-300 antialiased overflow-x-hidden">
 
-    <!-- NAVIGATION BAR -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 px-6 py-4 transition-all">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="#" class="heading-font text-xl font-bold tracking-tight text-slate-900">
-                AJAY KUMAR <span class="text-indigo-600">AVULA</span>
-            </a>
-            <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600">
-                <a href="#about" class="hover:text-indigo-600 transition-colors">About</a>
-                <a href="#skills" class="hover:text-indigo-600 transition-colors">Skills</a>
-                <a href="#featured-project" class="hover:text-indigo-600 transition-colors">Featured System</a>
-                <a href="#experience" class="hover:text-indigo-600 transition-colors">Experience</a>
-                <a href="mailto:ajaykumaravula999@gmail.com" class="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 shadow-sm transition-all flex items-center gap-2">
-                    <i class="fa-regular fa-envelope"></i> Contact Me
-                </a>
+    <!-- AMBIENT GLOWS -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <!-- NAV -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 py-4 px-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="heading-font text-2xl font-bold tracking-tight text-white">
+                AJAY <span class="text-indigo-500">.2</span>
             </div>
+            <div class="hidden md:flex space-x-10 text-sm font-medium tracking-wide">
+                <a href="#about" class="nav-link hover:text-white transition-colors">IDENTITY</a>
+                <a href="#skills" class="nav-link hover:text-white transition-colors">CORE_STACK</a>
+                <a href="#projects" class="nav-link hover:text-white transition-colors">ARCHITECTURES</a>
+                <a href="#experience" class="nav-link hover:text-white transition-colors">CHRONOLOGY</a>
+            </div>
+            <a href="mailto:ajaykumaravula999@gmail.com" class="px-6 py-2 bg-indigo-600 text-white rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-indigo-500 transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)]">
+                Initialize Connection
+            </a>
         </div>
     </nav>
 
-    <!-- HERO / IDENTITY LAYER -->
-    <section id="about" class="pt-32 pb-20 px-6 max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 border border-indigo-100 rounded-full text-indigo-700 text-xs font-semibold uppercase tracking-wider">
-                <span class="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span> MLOps & DevOps Systems
+    <!-- HERO -->
+    <section id="about" class="relative pt-48 pb-32 px-8">
+        <div class="max-w-7xl mx-auto text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border-white/10 text-xs font-bold text-indigo-400 tracking-[0.2em] uppercase">
+                <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span> MLOps & Systems Architecture
             </div>
-            <h1 class="heading-font text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-none">
-                Bridging AI Automation with <span class="gradient-text">Production Infrastructure</span>.
+            <h1 class="heading-font text-6xl md:text-8xl font-bold text-white tracking-tighter leading-[0.9]">
+                Bridging AI <span class="gradient-text">Intelligence</span> <br> with Production Resilience.
             </h1>
-            <p class="text-slate-600 text-base md:text-lg leading-relaxed max-w-2xl text-justify">
-                Results-driven MLOps and Cloud DevOps Engineer with over 3 years of experience automating infrastructure, optimizing CI/CD pipelines, and architecting production-grade AI microservices. Armed with a Master’s in AI and Automation from Sweden, I specialize in containerizing ML pipelines, managing automated model serialization, and orchestrating stable, environment-agnostic distributed clusters.
+            <p class="max-w-3xl mx-auto text-lg text-slate-400 leading-relaxed font-light">
+                Specializing in the intersection of High-Performance Machine Learning and Scalable Cloud Infrastructure. I architect production-grade MLOps ecosystems that transform static models into resilient, low-latency microservices. I bridge the gap between deterministic automation and non-linear intelligence.
             </p>
-            <div class="p-4 bg-emerald-50/60 border border-emerald-100 rounded-xl flex items-center gap-3 text-sm text-emerald-800">
-                <i class="fa-solid fa-language text-lg text-emerald-600"></i>
-                <span>Actively learning <strong>Swedish</strong> to enhance cross-cultural collaboration and global teamwork.</span>
-            </div>
-            <div class="flex flex-wrap gap-4 pt-2">
-                <a href="https://linkedin.com/in/ajay-kumar-avula/" target="_blank" class="flex items-center gap-2 px-5 py-3 border border-slate-200 rounded-xl bg-white shadow-sm hover:border-indigo-500 hover:text-indigo-600 transition-all font-medium text-sm">
-                    <i class="fab fa-linkedin text-lg"></i> LinkedIn Professional Profile
+            <div class="flex justify-center gap-6 pt-4">
+                <a href="https://linkedin.com/in/ajay-kumar-avula/" target="_blank" class="p-4 glass rounded-2xl hover:border-indigo-500/50 transition-all group">
+                    <i class="fab fa-linkedin text-2xl group-hover:text-indigo-400"></i>
                 </a>
-                <a href="https://github.com/ajaykumaravula" target="_blank" class="flex items-center gap-2 px-5 py-3 border border-slate-200 rounded-xl bg-white shadow-sm hover:border-indigo-500 hover:text-indigo-600 transition-all font-medium text-sm">
-                    <i class="fab fa-github text-lg"></i> GitHub Repositories
+                <a href="https://github.com/ajaykumaravula" target="_blank" class="p-4 glass rounded-2xl hover:border-indigo-500/50 transition-all group">
+                    <i class="fab fa-github text-2xl group-hover:text-indigo-400"></i>
                 </a>
-                <a href="resume.pdf" target="_blank" class="flex items-center gap-2 px-5 py-3 border border-indigo-100 rounded-xl bg-indigo-50 shadow-sm hover:bg-indigo-100 transition-all font-bold text-sm text-indigo-700">
-                    <i class="fa-solid fa-file-pdf text-lg"></i> Download Full Resume
+                <a href="resume.pdf" target="_blank" class="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-2xl hover:border-indigo-500/50 transition-all group">
+                    <i class="fa-solid fa-file-pdf text-xl group-hover:text-indigo-400"></i>
+                    <span class="font-bold text-sm tracking-tight text-white">Download Resume</span>
                 </a>
             </div>
         </div>
-        <div class="md:col-span-5 flex justify-center">
-            <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl bg-gradient-to-tr from-indigo-600 via-blue-500 to-emerald-400 p-1 shadow-2xl shadow-indigo-200/50 group">
-                <div class="w-full h-full bg-slate-900 rounded-[22px] flex flex-col justify-center items-center text-white p-6 space-y-4 text-center">
-                    <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center text-2xl text-indigo-400 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-server"></i>
+    </section>
+
+    <!-- SKILLS MATRIX -->
+    <section id="skills" class="py-32 px-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Box 1: AI/ML Lifecycle -->
+                <div class="p-8 rounded-3xl glass card-hover space-y-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 border border-indigo-500/20">
+                        <i class="fa-solid fa-brain text-xl"></i>
                     </div>
-                    <div>
-                        <h3 class="heading-font text-lg font-bold">AWS Certified</h3>
-                        <p class="text-xs text-slate-400 mt-1">Solutions Architect Associate</p>
-                        <p class="text-[10px] text-indigo-300 bg-indigo-950/80 px-2 py-0.5 rounded-full inline-block mt-2 font-mono">AWS-SAA</p>
+                    <h3 class="heading-font text-xl font-bold text-white">AI Lifecycle & Ops</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">XGBoost/CatBoost</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">Model Serialization</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">Inference Optimization</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">Drift Analysis</span>
                     </div>
-                    <div class="w-full border-t border-slate-800 my-2"></div>
-                    <div class="flex gap-4 text-xs text-slate-400">
-                        <div><i class="fa-solid fa-microchip text-emerald-400"></i> AI Practitioner</div>
-                        <div><i class="fa-solid fa-cloud text-blue-400"></i> Cloud Practitioner</div>
+                </div>
+                <!-- Box 2: Infrastructure & GitOps -->
+                <div class="p-8 rounded-3xl glass card-hover space-y-6">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 border border-blue-500/20">
+                        <i class="fa-solid fa-cloud-bolt text-xl"></i>
+                    </div>
+                    <h3 class="heading-font text-xl font-bold text-white">Infrastructure as Code</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">Terraform</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">Helm Charts</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">Argo CD</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">GitOps Patterns</span>
+                    </div>
+                </div>
+                <!-- Box 3: Distributed Systems -->
+                <div class="p-8 rounded-3xl glass card-hover space-y-6">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20">
+                        <i class="fa-solid fa-network-wired text-xl"></i>
+                    </div>
+                    <h3 class="heading-font text-xl font-bold text-white">Orchestration</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">Kubernetes (EKS)</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">Docker Isolation</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">VPC Networking</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10 text-xs font-mono">Distributed Nodes</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TECHNICAL STRENGTHS MATRIX -->
-    <section id="skills" class="py-20 bg-white border-y border-slate-200/60 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <h2 class="heading-font text-3xl font-bold tracking-tight text-slate-900">Technical Competence Matrix</h2>
-                <p class="text-slate-500 text-sm">Engineered skill set mapping advanced intelligence engineering architectures alongside production infrastructure tools.</p>
+    <!-- CORE ARCHITECTURE PROJECT -->
+    <section id="projects" class="py-32 px-8 bg-white/5">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="text-xs font-bold text-indigo-500 tracking-widest uppercase">Production Architecture</div>
+                <h2 class="heading-font text-4xl md:text-5xl font-bold text-white leading-tight">Multi-Model Inference & Persistent Audit Engine.</h2>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Developed a comparative inference engine serving real-time valuations. Architected a multi-model pipeline integrating XGBoost, LightGBM, and CatBoost to evaluate performance trade-offs in production.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-center">
+                        <div class="w-10 h-10 rounded-full glass flex items-center justify-center text-indigo-400 border border-indigo-400/20"><i class="fa-solid fa-bolt"></i></div>
+                        <span class="text-white font-medium">Ultra-low latency single-digit ms inference</span>
+                    </div>
+                    <div class="flex gap-4 items-center">
+                        <div class="w-10 h-10 rounded-full glass flex items-center justify-center text-blue-400 border border-blue-400/20"><i class="fa-solid fa-database"></i></div>
+                        <span class="text-white font-medium">Persistent SQL Audit Layer for Drift Tracking</span>
+                    </div>
+                    <div class="flex gap-4 items-center">
+                        <div class="w-10 h-10 rounded-full glass flex items-center justify-center text-emerald-400 border border-emerald-400/20"><i class="fa-solid fa-box"></i></div>
+                        <span class="text-white font-medium">Hermetically Sealed Environment Isolation</span>
+                    </div>
+                </div>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Category 1 -->
-                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 space-y-4">
-                    <div class="flex items-center gap-3 text-indigo-600 font-bold heading-font">
-                        <i class="fa-solid fa-code text-lg"></i> <h3>Programming Languages</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-python-plain colored"></i> Python</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-bash-plain text-slate-600"></i> Bash Scripting</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-java-plain colored"></i> Java</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="fa-solid fa-terminal text-slate-500"></i> PowerShell</span>
-                    </div>
-                </div>
-
-                <!-- Category 2 -->
-                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 space-y-4">
-                    <div class="flex items-center gap-3 text-indigo-600 font-bold heading-font">
-                        <i class="fa-solid fa-brain text-lg"></i> <h3>MLOps & AI Frameworks</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">Scikit-Learn</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">XGBoost</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">LightGBM</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">CatBoost</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">Model Serialization</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">Pandas / NumPy</span>
-                    </div>
-                </div>
-
-                <!-- Category 3 -->
-                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 space-y-4">
-                    <div class="flex items-center gap-3 text-indigo-600 font-bold heading-font">
-                        <i class="fa-solid fa-cubes text-lg"></i> <h3>Orchestration & Containers</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-docker-plain colored"></i> Docker</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">Helm Charts</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">AWS EKS</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">Port Mapping</span>
-                    </div>
-                </div>
-
-                <!-- Category 4 -->
-                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 space-y-4">
-                    <div class="flex items-center gap-3 text-indigo-600 font-bold heading-font">
-                        <i class="fa-solid fa-cloud-arrow-up text-lg"></i> <h3>IaC & GitOps Tools</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-terraform-plain colored"></i> Terraform</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-ansible-plain colored"></i> Ansible</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-argocd-plain colored"></i> Argo CD</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">Declarative Systems</span>
-                    </div>
-                </div>
-
-                <!-- Category 5 -->
-                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 space-y-4">
-                    <div class="flex items-center gap-3 text-indigo-600 font-bold heading-font">
-                        <i class="fa-solid fa-chart-line text-lg"></i> <h3>CI/CD & Observability</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-gitlab-plain colored"></i> GitLab CI</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-jenkins-plain colored"></i> Jenkins</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-grafana-plain colored"></i> Grafana</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-prometheus-plain colored"></i> Prometheus</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">ELK Stack / Loki</span>
-                    </div>
-                </div>
-
-                <!-- Category 6 -->
-                <div class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 space-y-4">
-                    <div class="flex items-center gap-3 text-indigo-600 font-bold heading-font">
-                        <i class="fa-solid fa-network-wired text-lg"></i> <h3>Cloud & Infrastructure</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-amazonwebservices-original colored"></i> AWS Cloud</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-azure-plain colored"></i> Microsoft Azure</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-mysql-plain colored"></i> MySQL</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700"><i class="devicon-kafka-plain colored"></i> Apache Kafka</span>
-                        <span class="tech-badge flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">TCP/IP & DNS</span>
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative glass rounded-3xl p-8 border border-white/10">
+                    <div class="bg-[#0f172a] rounded-xl p-6 font-mono text-xs text-indigo-300 leading-relaxed overflow-x-auto">
+                        <p class="text-slate-500 mb-2"># Multi-algorithm comparative evaluation</p>
+                        <p><span class="text-pink-500">for</span> name, model <span class="text-pink-500">in</span> models.items():</p>
+                        <p>&nbsp;&nbsp;model.fit(X_train, y_train)</p>
+                        <p>&nbsp;&nbsp;predictions = model.predict(X_test)</p>
+                        <p>&nbsp;&nbsp;joblib.dump(model, f'{name}_model.pkl')</p>
+                        <p><span class="text-slate-500 mt-4"># Production stateless inference entry</span></p>
+                        <p><span class="text-indigo-400">@app.route</span>('/predict', methods=['POST'])</p>
+                        <p><span class="text-pink-500">def</span> predict():</p>
+                        <p>&nbsp;&nbsp;res = chosen_brain.predict(input_features)[0]</p>
+                        <p>&nbsp;&nbsp;db.session.add(Prediction(predicted_value=res))</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CORE FEATURED CASE STUDY / SYSTEM BREAKDOWN -->
-    <section id="featured-project" class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="space-y-4 mb-12">
-            <div class="text-xs font-bold uppercase tracking-widest text-indigo-600">Production Highlight Showcase</div>
-            <h2 class="heading-font text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-                Automated MLOps Pipeline & Predictive AI Microservice
-            </h2>
-            <p class="text-slate-500 max-w-3xl text-sm">
-                An end-to-end engineered predictive application designed to model highly non-linear real estate market behaviors on the California housing dataset and serve immediate, low-latency inferences reliably inside sandboxed cloud nodes.
-            </p>
-        </div>
-
-        <!-- System Pipeline Architecture Graphic Breakdown -->
-        <div class="bg-slate-900 text-slate-100 rounded-3xl p-8 shadow-xl border border-slate-800 mb-10">
-            <h3 class="heading-font text-indigo-400 font-bold uppercase tracking-wider text-xs mb-6 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-indigo-500"></span> Core System Architecture Pipeline Map
-            </h3>
+    <!-- EXPERIENCE LOGS -->
+    <section id="experience" class="py-32 px-8">
+        <div class="max-w-4xl mx-auto space-y-16">
+            <h2 class="heading-font text-4xl font-bold text-white text-center">Professional Chronology</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                <!-- Node 1 -->
-                <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/50 relative z-10 space-y-3">
-                    <div class="text-xs font-mono text-indigo-400 flex justify-between">
-                        <span>STAGE 01</span> <i class="fa-solid fa-bezier-curve text-base"></i>
-                    </div>
-                    <h4 class="font-bold text-base text-white">Modeling & Pipeline</h4>
-                    <p class="text-xs text-slate-400 text-justify">
-                        Evaluation system parsing tabular parameters across tree-based algorithms. Sequential correction runs optimizing weights via XGBoost and CatBoost.
-                    </p>
-                    <div class="pt-2 flex flex-wrap gap-1.5">
-                        <span class="text-[10px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-700">Scikit-Learn</span>
-                        <span class="text-[10px] font-mono bg-slate-900 text-indigo-300 px-2 py-0.5 rounded border border-slate-700">R² > 80%</span>
-                    </div>
-                </div>
-
-                <!-- Node 2 -->
-                <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/50 relative z-10 space-y-3">
-                    <div class="text-xs font-mono text-blue-400 flex justify-between">
-                        <span>STAGE 02</span> <i class="fa-solid fa-gears text-base"></i>
-                    </div>
-                    <h4 class="font-bold text-base text-white">Flask RESTful API Layer</h4>
-                    <p class="text-xs text-slate-400 text-justify">
-                        Stateless microservice catching inbound JSON vectors and payloads. Pre-loads static serialized binary weights on daemon thread bootstrap to drive inference down to single-digit milliseconds.
-                    </p>
-                    <div class="pt-2 flex flex-wrap gap-1.5">
-                        <span class="text-[10px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-700">joblib artifact</span>
-                        <span class="text-[10px] font-mono bg-slate-900 text-blue-300 px-2 py-0.5 rounded border border-slate-700">HTTP POST</span>
-                    </div>
-                </div>
-
-                <!-- Node 3 -->
-                <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/50 relative z-10 space-y-3">
-                    <div class="text-xs font-mono text-emerald-400 flex justify-between">
-                        <span>STAGE 03</span> <i class="fa-solid fa-box text-base"></i>
-                    </div>
-                    <h4 class="font-bold text-base text-white">Docker Container Zone</h4>
-                    <p class="text-xs text-slate-400 text-justify">
-                        Hermetically sealed deployment image isolating operating systems and host layers. Explicit network bridge mapping pathways for completely deterministic execution.
-                    </p>
-                    <div class="pt-2 flex flex-wrap gap-1.5">
-                        <span class="text-[10px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-700">python:3.10-slim</span>
-                        <span class="text-[10px] font-mono bg-slate-900 text-emerald-300 px-2 py-0.5 rounded border border-slate-700">-p 5001:5001</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Technical Tabs / Collapsible Code Walkthrough -->
-        <div class="grid md:grid-cols-12 gap-8 items-start">
-            <div class="md:col-span-4 space-y-3">
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">System Specifications</div>
-                <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-2">
-                    <div class="flex justify-between text-xs font-medium"><span class="text-slate-500">Model Accuracy Evaluation</span> <span class="font-mono text-indigo-600 font-bold">MAE / RMSE Checked</span></div>
-                    <div class="flex justify-between text-xs font-medium"><span class="text-slate-500">Variance Captured</span> <span class="font-mono text-emerald-600 font-bold">Exceeds 80%</span></div>
-                    <div class="flex justify-between text-xs font-medium"><span class="text-slate-500">Microservice Pattern</span> <span class="font-mono text-slate-700 font-bold">Stateless REST API</span></div>
-                    <div class="flex justify-between text-xs font-medium"><span class="text-slate-500">Security Guardrail</span> <span class="font-mono text-rose-600 font-bold">debug=False (Enforced)</span></div>
-                </div>
-            </div>
-            <div class="md:col-span-8 bg-slate-950 rounded-2xl border border-slate-800 text-slate-300 overflow-hidden font-mono text-xs shadow-lg">
-                <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex justify-between items-center text-slate-400 text-[11px]">
-                    <span><i class="fa-solid fa-code text-indigo-400 mr-1.5"></i> Dockerfile Configuration Recipe</span>
-                    <span class="text-slate-500">Production Build Environment</span>
-                </div>
-                <pre class="p-5 overflow-x-auto text-emerald-400 leading-relaxed">
-<span class="text-slate-500"># Use slim footprint to minimize cloud edge compute storage overhead</span>
-<span class="text-indigo-400">FROM</span> python:3.10-slim
-
-<span class="text-indigo-400">WORKDIR</span> /app
-
-<span class="text-slate-500"># Lock manifest layers for deterministic cache parsing</span>
-<span class="text-indigo-400">COPY</span> requirements.txt .
-<span class="text-indigo-400">RUN</span> pip install --no-cache-dir -r requirements.txt
-
-<span class="text-indigo-400">COPY</span> . .
-
-<span class="text-slate-500"># Open internal portal boundary explicitly</span>
-<span class="text-indigo-400">EXPOSE</span> 5001
-
-<span class="text-slate-500"># Prevent detached daemon thread pipeline execution crash parameters</span>
-<span class="text-indigo-400">ENV</span> FLASK_DEBUG=0
-
-<span class="text-indigo-400">CMD</span> ["python", "app.py"]</pre>
-            </div>
-        </div>
-    </section>
-
-    <!-- WORK TIMELINE EXPERIENCE CHRONOLOGY -->
-    <section id="experience" class="py-20 bg-slate-100/60 border-t border-slate-200/60 px-6">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16 space-y-2">
-                <h2 class="heading-font text-3xl font-bold tracking-tight text-slate-900">Professional Engineering Chronology</h2>
-                <p class="text-slate-500 text-sm">Industrial footprint managing automated pipelines and cloud scaling arrays.</p>
-            </div>
-
-            <!-- TIMELINE ROOT -->
-            <div class="relative border-l-2 border-slate-200 pl-6 space-y-12 ml-4">
+            <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-800 before:to-transparent">
                 
                 <!-- Entry 1 -->
-                <div class="relative group">
-                    <span class="absolute -left-[31px] top-1.5 bg-white border-2 border-indigo-600 w-4 h-4 rounded-full transition-transform group-hover:scale-125"></span>
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-3">
-                        <div>
-                            <h3 class="heading-font font-bold text-lg text-slate-900">AI Fullstack Developer Intern</h3>
-                            <div class="text-indigo-600 font-semibold text-sm">Gaddr — Stockholm, Sweden</div>
-                        </div>
-                        <span class="text-xs font-mono font-bold bg-white px-3 py-1 border border-slate-200 text-slate-500 rounded-full shadow-sm">Feb 2025 – Present</span>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-indigo-500 bg-[#0b0f1a] text-indigo-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fa-solid fa-microchip text-xs"></i>
                     </div>
-                    <ul class="space-y-2 text-slate-600 text-sm list-none pl-0 text-justify">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-nodes text-indigo-500 text-[10px] mt-1.5 flex-shrink-0"></i> <span><strong>AI Microservice Architecture:</strong> Deployed end-to-end analytics application on a stateless Flask REST API layout running optimized serialized tree models.</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-nodes text-indigo-500 text-[10px] mt-1.5 flex-shrink-0"></i> <span><strong>Orchestration & GitOps:</strong> Managed application environments on AWS EKS with reusable Helm charts, moving setups toward GitOps patterns via Argo CD configurations.</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-nodes text-indigo-500 text-[10px] mt-1.5 flex-shrink-0"></i> <span><strong>Infrastructure Automation:</strong> Controlled Kubernetes cluster deployment models using automated Terraform definitions to completely stop configuration drift.</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-nodes text-indigo-500 text-[10px] mt-1.5 flex-shrink-0"></i> <span><strong>Cloud Cost Management:</strong> Lowered AWS cluster footprint runtime requirements by 30% through targeted environment resource sizing models.</span></li>
-                    </ul>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] glass p-6 rounded-3xl border border-white/5 card-hover">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-white">AI Fullstack Engineer</div>
+                            <time class="font-mono text-[10px] uppercase text-indigo-400">2025 - PRES</time>
+                        </div>
+                        <div class="text-slate-500 text-xs mb-4">Gaddr | Stockholm, Sweden</div>
+                        <ul class="text-xs text-slate-400 space-y-2 list-disc pl-4">
+                            <li>Orchestrated production AWS EKS clusters using reusable Helm charts and Argo CD.</li>
+                            <li>Engineered low-latency Flask REST APIs for real-time AI inference pipelines.</li>
+                            <li>Implemented Terraform-driven IaC to eliminate configuration drift across environments.</li>
+                            <li>Optimized cloud compute utilization, reducing infrastructure costs by 30%.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Entry 2 -->
-                <div class="relative group">
-                    <span class="absolute -left-[31px] top-1.5 bg-white border-2 border-slate-300 w-4 h-4 rounded-full transition-transform group-hover:scale-125 group-hover:border-indigo-600"></span>
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-3">
-                        <div>
-                            <h3 class="heading-font font-bold text-lg text-slate-900">Associate DevOps Engineer</h3>
-                            <div class="text-indigo-600 font-semibold text-sm">I CUBE SOLUTIONS — Hyderabad, India</div>
-                        </div>
-                        <span class="text-xs font-mono font-bold bg-white px-3 py-1 border border-slate-200 text-slate-500 rounded-full shadow-sm">Mar 2022 – Aug 2024</span>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-[#0b0f1a] text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fa-solid fa-server text-xs"></i>
                     </div>
-                    <ul class="space-y-2 text-slate-600 text-sm list-none pl-0 text-justify">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-nodes text-slate-400 text-[10px] mt-1.5 flex-shrink-0"></i> <span><strong>Cloud Infrastructure:</strong> Managed core AWS resources across IAM, EC2, VPC, and database storage parameters using systematic declarative infrastructure.</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-nodes text-slate-400 text-[10px] mt-1.5 flex-shrink-0"></i> <span><strong>CI/CD Engineering:</strong> Designed GitLab pipelines tracking static code rules via SonarQube validation and running automated environment metrics collections.</span></li>
-                    </ul>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] glass p-6 rounded-3xl border border-white/5 card-hover">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-white">Associate DevOps Engineer</div>
+                            <time class="font-mono text-[10px] uppercase text-slate-500">2022 - 2024</time>
+                        </div>
+                        <div class="text-slate-500 text-xs mb-4">I Cube Solutions | Hyderabad, India</div>
+                        <ul class="text-xs text-slate-400 space-y-2 list-disc pl-4">
+                            <li>Managed core AWS ecosystem including IAM, EC2, VPC, and persistent storage.</li>
+                            <li>Architected GitLab CI/CD pipelines integrated with SonarQube for static analysis.</li>
+                            <li>Automated cloud resource provisioning using systematic declarative scripting.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ACADEMIC ALIGNMENT -->
-    <section class="py-20 max-w-5xl mx-auto px-6">
-        <div class="text-center mb-12 space-y-2">
-            <h2 class="heading-font text-2xl font-bold tracking-tight text-slate-900">Academic Alignment</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="p-5 bg-white border border-slate-200 rounded-2xl space-y-2 text-center shadow-sm">
-                <i class="fa-solid fa-graduation-cap text-2xl text-indigo-600"></i>
-                <h4 class="font-bold text-sm text-slate-900">Master’s in AI & Automation</h4>
-                <p class="text-xs text-slate-500">University West<br>Trollhättan, Sweden</p>
+    <!-- FOOTER -->
+    <footer class="py-20 border-t border-white/5 text-center px-8">
+        <div class="max-w-7xl mx-auto space-y-4">
+            <div class="heading-font text-white font-bold text-lg">AJAY KUMAR AVULA</div>
+            <p class="text-slate-600 text-[10px] uppercase tracking-[0.4em] font-mono">AWS Certified Solutions Architect // MLOps Lifecycle Authority</p>
+            <div class="flex justify-center gap-6 pt-4 text-slate-500">
+                <a href="https://linkedin.com/in/ajay-kumar-avula/" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ajaykumaravula" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
             </div>
-            <div class="p-5 bg-white border border-slate-200 rounded-2xl space-y-2 text-center shadow-sm">
-                <i class="fa-solid fa-graduation-cap text-2xl text-indigo-600"></i>
-                <h4 class="font-bold text-sm text-slate-900">Master’s in Software Engineering</h4>
-                <p class="text-xs text-slate-500">Blekinge Institute of Technology<br>Karlskrona, Sweden</p>
-            </div>
-            <div class="p-5 bg-white border border-slate-200 rounded-2xl space-y-2 text-center shadow-sm">
-                <i class="fa-solid fa-graduation-cap text-2xl text-indigo-600"></i>
-                <h4 class="font-bold text-sm text-slate-900">Bachelor’s in Computer Science Engineering</h4>
-                <p class="text-xs text-slate-500">Jawaharlal Nehru Technological University<br>India</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER PORTAL -->
-    <footer class="bg-slate-900 text-slate-400 text-xs py-8 px-6 text-center border-t border-slate-800">
-        <div class="max-w-6xl mx-auto space-y-2">
-            <p class="heading-font font-medium text-slate-200">&copy; 2026 Ajay Kumar Avula. All Rights Reserved.</p>
-            <p class="text-slate-500 font-mono">Designed for low-latency delivery, clean execution, and high parse index capabilities.</p>
         </div>
     </footer>
 
 </body>
 </html>
-<!-- Last deployed: 2026-06-13 17:35 -->
